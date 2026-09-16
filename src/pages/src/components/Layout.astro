@@ -1,0 +1,43 @@
+---
+const { lang } = Astro.props;
+import NavbarFR from "./NavbarFR.astro";
+import NavbarEN from "./NavbarEN.astro";
+import Footer from "./Footer.astro";
+---
+
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="manifest" href="/manifest.json" />
+    <title>Les Quatre À La Barre</title>
+    <style>
+      body {
+        background: #f5e9d3;
+        font-family: Inter, sans-serif;
+        color: #0a2a43;
+        margin: 0;
+      }
+      .paper {
+        background: #fff;
+        padding: 2rem;
+        margin: 2rem auto;
+        max-width: 900px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      }
+      h1, h2, h3 {
+        font-family: Merriweather, serif;
+        color: #0a2a43;
+      }
+    </style>
+  </head>
+
+  <body>
+    {lang === "fr" ? <NavbarFR /> : <NavbarEN />}
+    <main class="paper">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

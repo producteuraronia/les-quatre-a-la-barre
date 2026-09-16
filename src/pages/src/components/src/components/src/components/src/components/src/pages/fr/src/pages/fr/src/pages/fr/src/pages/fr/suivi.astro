@@ -1,0 +1,18 @@
+---
+import Layout from "../../components/Layout.astro";
+---
+
+<Layout lang="fr">
+  <h1>Suivi GPS</h1>
+
+  <p>Voici notre position en temps réel :</p>
+
+  <iframe 
+    src="https://forecast.predictwind.com/tracking/display/LesQuatreALaBarre" 
+    width="100%" 
+    height="600" 
+    style="border:1px solid #ccc;border-radius:8px;">
+  </iframe>
+
+  <p>Carte fournie par PredictWind.</p>
+</Layout>
